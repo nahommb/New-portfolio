@@ -5,6 +5,36 @@ class HomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Stack(
+      children:[
+        Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            padding: EdgeInsets.all(40),
+            child: Text('Hi,Welcome ',style: TextStyle(color: Colors.white,fontSize: 40),),
+          ),
+          Container(
+              child:Image.asset('images/profile_image.png')
+          )
+        ],
+      ),
+        Container(
+          height: 1000,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin:Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Colors.transparent,
+                  Colors.black,
+                  Colors.black,
+            ])
+          ),
+        ),
+
+      ],
+    );
   }
 }
