@@ -5,6 +5,11 @@ class HomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+    final crossAxisCount = screenWidth < 780 ? 1 : 2;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -21,33 +26,79 @@ class HomeWidget extends StatelessWidget {
             //     fontFamily: "Bokor"),)),
         ),
         SizedBox(height: 30,),
-        Stack(
+        screenWidth>590?
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(
-              margin: EdgeInsets.only(right: 20,top: 20),
-              height: 200,
-              width: 240,
-              color: Color(0xFFD9D9D9),
+            Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(right: 20,top: 20),
+                      height: 200,
+                      width: 240,
+                      color: Color(0xFFD9D9D9),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 20,bottom: 20),
+                      height: 240,
+                      width: 200,
+                      color: Colors.black12,
+                      child: Image.asset('images/profile_2.JPG'),
+                    )
+                  ],
+                ),
+                Text('Neymar Junior',style: GoogleFonts.bokor(fontSize: 15),),
+              ],
             ),
+            Column(
+              children: [
+                Text('Who is he',style: GoogleFonts.bokor(fontSize: 25),),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  // height: 400,
+                  width: screenWidth*0.4,
+                  // color: Colors.blue,
+                  child: Text('In the Niya Sports Wear project, I faced a complex issue with state synchronization between the Redux store and localStorage, especially during user login and cart updates. The cart would sometimes reset unexpectedly on page reloads.'
+                      'To solve this, I implemented middleware to persist and rehydrate the Redux state from localStorage. I also carefully managed state updates with Redux Toolkit and ensured every async API call was handled with proper loading and error states using Redux-Saga. This made the app more stable and user-friendly across sessions.'),
+                ),
+              ],
+            )
+        ],):
+        Column(
+          children: [
+            Stack(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 20,top: 20),
+                  height: 200,
+                  width: 240,
+                  color: Color(0xFFD9D9D9),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 20,bottom: 20),
+                  height: 240,
+                  width: 200,
+                  color: Colors.black12,
+                  child: Image.asset('images/profile_2.JPG'),
+                )
+              ],
+            ),
+            Text('Neymar Junior',style: GoogleFonts.bokor(fontSize: 15),),
+            SizedBox(height: 30,),
+            Text('Who is he',style: GoogleFonts.bokor(fontSize: 25),),
             Container(
-              margin: EdgeInsets.only(left: 20,bottom: 20),
-              height: 240,
-              width: 200,
-              color: Colors.blueAccent,
+              padding: EdgeInsets.all(20),
+              // height: 400,
+              width: double.infinity,
+              // color: Colors.blue,
+              child: Text('In the Niya Sports Wear project, I faced a complex issue with state synchronization between the Redux store and localStorage, especially during user login and cart updates. The cart would sometimes reset unexpectedly on page reloads.'
+                  'To solve this, I implemented middleware to persist and rehydrate the Redux state from localStorage. I also carefully managed state updates with Redux Toolkit and ensured every async API call was handled with proper loading and error states using Redux-Saga. This made the app more stable and user-friendly across sessions.'),
             )
           ],
         ),
-        Text('Neymar Junior',style: GoogleFonts.bokor(fontSize: 15),),
-        SizedBox(height: 30,),
-        Text('Who is he',style: GoogleFonts.bokor(fontSize: 25),),
-        Container(
-          padding: EdgeInsets.all(20),
-          // height: 400,
-          width: double.infinity,
-          // color: Colors.blue,
-          child: Text('In the Niya Sports Wear project, I faced a complex issue with state synchronization between the Redux store and localStorage, especially during user login and cart updates. The cart would sometimes reset unexpectedly on page reloads.'
-          'To solve this, I implemented middleware to persist and rehydrate the Redux state from localStorage. I also carefully managed state updates with Redux Toolkit and ensured every async API call was handled with proper loading and error states using Redux-Saga. This made the app more stable and user-friendly across sessions.'),
-        )
+
       ],
     );
   }

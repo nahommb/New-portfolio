@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:portfolio/screens/web_screen.dart';
+
 class ProjectWidget extends StatelessWidget {
   const ProjectWidget({super.key});
 
@@ -15,30 +18,35 @@ class ProjectWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                // height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10))
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 70,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10))
-                      ),
-                      child: Image.asset('images/web.png',fit: BoxFit.contain,),
-                    ),
-                    Container(
+              GestureDetector(
+                onTap:(){
+                  WebScreen().launch(context);
+                },
+                child: Container(
+                  // height: 100,
+                  width: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: double.infinity,
                         decoration: BoxDecoration(
-                            color: Color(0xFFD9D9D9),
-                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)
-                        ) ),
-                        padding: EdgeInsets.all(4),
-                        child: Center(child: Text('Website',style: TextStyle(color: Colors.white),)))
-                  ],
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                        ),
+                        child: Image.asset('images/web.png',fit: BoxFit.contain,),
+                      ),
+                      Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xFFD9D9D9),
+                              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)
+                          ) ),
+                          padding: EdgeInsets.all(4),
+                          child: Center(child: Text('Website',style: TextStyle(color: Colors.white),)))
+                    ],
+                  ),
                 ),
               ),
               Container(
