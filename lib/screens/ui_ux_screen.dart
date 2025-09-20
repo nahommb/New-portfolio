@@ -49,7 +49,7 @@ class UiUxScreen extends StatelessWidget {
                         padding: EdgeInsets.all(10),
                         // height: 400,
                         width:screenWidth*0.9,
-                        color:Color.fromARGB(255, 255, 242, 242),
+                        color:Color.fromARGB(255, 233, 233, 233),
                         child: Image.asset(projectDataList[index]['imagePath'][imageIndex]),
                       );
                         }),
