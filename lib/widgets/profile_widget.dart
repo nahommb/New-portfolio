@@ -92,15 +92,25 @@ class ProfileWidget extends StatelessWidget {
               Text('Experience',style: GoogleFonts.bokor(fontSize: 20),),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0,bottom: 6),
-                child: Text('Arbaminch Unversity Bsc Degree in Software Engineering'),
+                child: Text('Frontend Engineer – Tria PLC'),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 18),
-                child: Text('CGPA:4.00'),
-              )
+                child: Text('Addis Ababa'),
+              ),
+              SizedBox(height: 20,),
+                Padding(
+                padding: const EdgeInsets.only(left: 8.0,bottom: 6),
+                child: Text('Frontend Developer – Record Communication (Official Website Project)'),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 18),
+                child: Text('Addis Ababa'),
+              ), 
             ],
           ),
-          SizedBox(height: 20,)
+          SizedBox(height: 20,),
+          
         ],
       ),
     );

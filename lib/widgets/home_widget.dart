@@ -49,7 +49,7 @@ class HomeWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                Text('Neymar Junior',style: GoogleFonts.bokor(fontSize: 15),),
+                Text('Nahom Melese',style: GoogleFonts.bokor(fontSize: 25),),
               ],
             ),
             Column(

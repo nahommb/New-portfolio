@@ -1,8 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/data/project_data.dart';
 
-class WebScreen extends StatelessWidget {
+
+class DetailScreen extends StatelessWidget {
+
+  final String title;
+  final List<dynamic> projectDataLists ;
+  final bool isMobile;
+  DetailScreen({super.key, required this.title,required this.projectDataLists,required this.isMobile});
+
+
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -14,25 +21,25 @@ class WebScreen extends StatelessWidget {
           children: [
             Center(
               child: Text(
-                "Website",
+                title,
                 style: GoogleFonts.bokor(fontSize: 35),
               ),
             ),
             SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: ProjectData.projectDataLists.length,
+                itemCount: projectDataLists.length,
                 itemBuilder: (context, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 20),
                       Text(
-                        "${ProjectData.projectDataLists[index]['title']}",
+                        "${projectDataLists[index]['title']}",
                         style: GoogleFonts.bokor(fontSize: 26),
                       ),
                       SizedBox(height: 10),
-                      Text('wwdwdjwajdiowd dowidjioaw'),
+                      Text('${projectDataLists[index]['description']}'),
 
                       screenWidth > 590
                           ? Row(
@@ -53,15 +60,13 @@ class WebScreen extends StatelessWidget {
                                       
                                       Container(
                                         padding: EdgeInsets.only(top: 10,left: screenWidth*0.1),
-                                        height: 100,
+                                        height: 150,
                                         child: ListView.builder(
-                                          itemCount: 4,
+                                          itemCount: projectDataLists[index]['technology'].length,
                                           shrinkWrap: true, // ✅ fix
-                                          physics:
-                                              NeverScrollableScrollPhysics(), // ✅ fix
-                                          itemBuilder: (context, index) {
+                                          itemBuilder: (context,techindex) {
                                             return Text(
-                                                'Flutter, Firebase, Node.js, Express.js, MongoDB');
+                                                '${projectDataLists[index]['technology'][techindex]}');
                                           },
                                         ),
                                       ),
@@ -71,8 +76,9 @@ class WebScreen extends StatelessWidget {
                                 SizedBox(width: 20),
                                 Container(
                                   height: 200,
-                                  width: screenWidth * 0.3,
+                                  width: isMobile? 150:screenWidth * 0.3,
                                   color: Colors.amber,
+                                  child: Image.asset(projectDataLists[index]['imagePath']),
                                 )
                               ],
                             )
@@ -85,15 +91,15 @@ class WebScreen extends StatelessWidget {
                                 ),
                                 Container(
                                   padding: EdgeInsets.only(top: 10,left: 20),
-                                  height: 100,
+                                  height: 150,
                                   child: ListView.builder(
-                                    itemCount: 4,
+                                    itemCount: projectDataLists[index]['technology'].length,
                                     shrinkWrap: true, // ✅ fix
-                                    physics:
-                                        NeverScrollableScrollPhysics(), // ✅ fix
-                                    itemBuilder: (context, index) {
+                                    // physics:
+                                        // NeverScrollableScrollPhysics(), // ✅ fix
+                                    itemBuilder: (context, tindex) {
                                       return Text(
-                                          'Flutter, Firebase, Node.js, Express.js, MongoDB');
+                                          '${projectDataLists[index]['technology'][tindex]}');
                                     },
                                   ),
                                 ),
@@ -101,7 +107,7 @@ class WebScreen extends StatelessWidget {
                             ),
 
                       SizedBox(height: 10),
-                      Text('preview link: www.niyasportswear.com'),
+                      Text('${projectDataLists[index]['previewLink']}'),
                       Divider(),
                     ],
                   );
@@ -113,4 +119,4 @@ class WebScreen extends StatelessWidget {
       ),
     );
   }
-}
+}  

@@ -7,6 +7,9 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       height: 200,
       width: double.infinity,
@@ -18,6 +21,7 @@ class FooterWidget extends StatelessWidget {
             color: Colors.white
           ),),
           Spacer(),
+          screenWidth>590?
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -25,10 +29,33 @@ class FooterWidget extends StatelessWidget {
               fotterElements(iconData: Icons.email,name: 'nahomjr17@gmail.com',link: 'https'),
               fotterElements(iconData: Icons.facebook,name: 'Telegram',link: 'https'),
               fotterElements(iconData: Icons.phone,name: '+251946596354',link: 'https'),
-
+              
+            ],
+          ):Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+                 Row(
+            mainAxisAlignment:screenWidth>590? MainAxisAlignment.spaceAround:MainAxisAlignment.center,
+            children: [
+              fotterElements(iconData: Icons.telegram,name: 'Hermela96',link: 'https'),
+              SizedBox(width: 20,),
+              fotterElements(iconData: Icons.email,name: 'nahomjr17@gmail.com',link: 'https'),
+          
+              
             ],
           ),
-          SizedBox(height: 50,)
+             Row(
+            mainAxisAlignment:screenWidth>590? MainAxisAlignment.spaceAround:MainAxisAlignment.center,
+            children: [
+              fotterElements(iconData: Icons.facebook,name: 'Telegram',link: 'https'),
+              SizedBox(width: 20,),
+              fotterElements(iconData: Icons.phone,name: '+251946596354',link: 'https'),
+              
+            ],
+          )
+            ],
+          ),
+          SizedBox(height: 20,)
         ],
       ),
     );
