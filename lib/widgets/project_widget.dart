@@ -42,7 +42,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                     ).launch(context);
                   },
                   child: buildProjectCard(
-                    imagePath: 'images/web.png',
+                    imagePath: 'assets/images/web.png',
                     title: 'Website',
                     isHover: isHoverWebsite,
                   ),
@@ -63,7 +63,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                     ).launch(context);
                   },
                   child: buildProjectCard(
-                    imagePath: 'images/android.png',
+                    imagePath: 'assets/images/android.png',
                     title: 'Mobile App',
                     isHover: isHoverMobile,
                   ),
@@ -82,7 +82,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                     ).launch(context);
                   },
                   child: buildProjectCard(
-                    imagePath: 'images/ui_ux.png',
+                    imagePath: 'assets/images/ui_ux.png',
                     title: 'UI/UX',
                     isHover: isHoverUiUx,
                   ),

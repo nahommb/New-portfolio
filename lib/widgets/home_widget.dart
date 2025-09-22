@@ -45,7 +45,7 @@ class HomeWidget extends StatelessWidget {
                       height: 240,
                       width: 200,
                       color: Colors.black12,
-                      child: Image.asset('images/profile_2.JPG'),
+                      child: Image.asset('assets/images/profile_2.JPG'),
                     )
                   ],
                 ),
@@ -80,7 +80,7 @@ class HomeWidget extends StatelessWidget {
                   height: 240,
                   width: 200,
                   color: Colors.black12,
-                  child: Image.asset('images/profile_2.JPG'),
+                  child: Image.asset('assets/images/profile_2.JPG'),
                 )
               ],
             ),
