@@ -37,7 +37,7 @@ static const List <dynamic> uiuxProjectDataList = [{
     'title':'Niya Sports wear',
     'description':'In the Niya Sports Wear project, I faced a complex issue with state ',
     'imagePath':['assets/images/project/personal-portfolio.png','assets/images/project/personal-portfolio-2.png',
-                  'images/project/personal-portfolio.png','assets/images/project/personal-portfolio.png'
+                  'assetsimages/project/personal-portfolio.png','assets/images/project/personal-portfolio.png'
                   ]
 
 },
