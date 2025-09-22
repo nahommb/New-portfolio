@@ -60,8 +60,7 @@ class HomeWidget extends StatelessWidget {
                   // height: 400,
                   width: screenWidth*0.4,
                   // color: Colors.blue,
-                  child: Text('In the Niya Sports Wear project, I faced a complex issue with state synchronization between the Redux store and localStorage, especially during user login and cart updates. The cart would sometimes reset unexpectedly on page reloads.'
-                      'To solve this, I implemented middleware to persist and rehydrate the Redux state from localStorage. I also carefully managed state updates with Redux Toolkit and ensured every async API call was handled with proper loading and error states using Redux-Saga. This made the app more stable and user-friendly across sessions.'),
+                  child: Text('I am a passionate Software Engineering with hands-on experience in building web and mobile applications. My expertise includes working with Node.js, MongoDB, SQL, and the MERN stack to develop dynamic and scalable web solutions, as well as creating cross-platform mobile applications using Flutter. I enjoy solving problems through clean, efficient code and have built projects ranging from e-commerce platforms to official company websites. I am eager to continue learning, take on new challenges, and contribute to innovative software solutions.'),
                 ),
               ],
             )
