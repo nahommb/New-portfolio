@@ -36,16 +36,16 @@ static const List <dynamic> mobileProjectDataList = [
 static const List <dynamic> uiuxProjectDataList = [{
     'title':'Niya Sports wear',
     'description':'In the Niya Sports Wear project, I faced a complex issue with state ',
-    'imagePath':['images/project/personal-portfolio.png','images/project/personal-portfolio-2.png',
-                  'images/project/personal-portfolio.png','images/project/personal-portfolio.png'
+    'imagePath':['assets/images/project/personal-portfolio.png','assets/images/project/personal-portfolio-2.png',
+                  'images/project/personal-portfolio.png','assets/images/project/personal-portfolio.png'
                   ]
 
 },
 {
     'title':'Niya Sports wear',
     'description':'In the Niya Sports Wear project, I faced a complex issue with state ',
-    'imagePath':['images/project/personal-portfolio.png','images/project/personal-portfolio.png',
-                  'images/project/personal-portfolio-3.png',
+    'imagePath':['assets/images/project/personal-portfolio.png','assets/images/project/personal-portfolio.png',
+                  'assets/images/project/personal-portfolio-3.png',
                   ]
 
 }
