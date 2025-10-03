@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:nb_utils/nb_utils.dart';
 import 'package:portfolio/data/project_data.dart';
 import 'package:portfolio/screens/detail_screen.dart';
 import 'package:portfolio/screens/ui_ux_screen.dart';
@@ -35,11 +34,16 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
-                    DetailScreen(
-                      title: 'Website',
-                      projectDataLists: ProjectData.webProjectDataLists,
-                      isMobile: false,
-                    ).launch(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailScreen(
+                          title: 'Website',
+                          projectDataLists: ProjectData.webProjectDataLists,
+                          isMobile: false,
+                        ),
+                      ),
+                    );
                   },
                   child: buildProjectCard(
                     imagePath: 'assets/images/web.png',
@@ -56,11 +60,16 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
-                    DetailScreen(
-                      title: 'Mobile App',
-                      projectDataLists: ProjectData.mobileProjectDataList,
-                      isMobile: true,
-                    ).launch(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailScreen(
+                          title: 'Mobile App',
+                          projectDataLists: ProjectData.mobileProjectDataList,
+                          isMobile: true,
+                        ),
+                      ),
+                    );
                   },
                   child: buildProjectCard(
                     imagePath: 'assets/images/android.png',
@@ -77,9 +86,14 @@ class _ProjectWidgetState extends State<ProjectWidget> {
                 cursor: SystemMouseCursors.click,
                 child: GestureDetector(
                   onTap: () {
-                    UiUxScreen(
-                      projectDataList: ProjectData.uiuxProjectDataList,
-                    ).launch(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => UiUxScreen(
+                          projectDataList: ProjectData.uiuxProjectDataList,
+                        ),
+                      ),
+                    );
                   },
                   child: buildProjectCard(
                     imagePath: 'assets/images/ui_ux.png',
@@ -91,7 +105,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }
@@ -104,7 +118,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
   }) {
     return Container(
       width: 100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -112,25 +126,25 @@ class _ProjectWidgetState extends State<ProjectWidget> {
           Container(
             height: 70,
             width: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
             child: Image.asset(imagePath, fit: BoxFit.contain),
           ),
           AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             decoration: BoxDecoration(
-              color: isHover ? Colors.blue : Color(0xFFD9D9D9),
-              borderRadius: BorderRadius.only(
+              color: isHover ? Colors.blue : const Color(0xFFD9D9D9),
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10),
               ),
             ),
-            padding: EdgeInsets.all(4),
+            padding: const EdgeInsets.all(4),
             child: Center(
               child: Text(
                 title,
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ),
