@@ -77,7 +77,7 @@ class DetailScreen extends StatelessWidget {
                                 Container(
                                   height: 200,
                                   width: isMobile? 150:screenWidth * 0.3,
-                                  color: Colors.amber,
+                                  // color: Colors.amber,
                                   child: Image.asset(projectDataLists[index]['imagePath']),
                                 )
                               ],
