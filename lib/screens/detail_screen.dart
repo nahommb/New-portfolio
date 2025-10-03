@@ -7,6 +7,7 @@ class DetailScreen extends StatelessWidget {
   final String title;
   final List<dynamic> projectDataLists ;
   final bool isMobile;
+  
   DetailScreen({super.key, required this.title,required this.projectDataLists,required this.isMobile});
 
 
